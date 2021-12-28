@@ -2,6 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 
+const routePrizeDraw = require("./src/routes/prize-draw");
+
+app.use("/prize-draw", routePrizeDraw);
+
 
 app.use((req, res, next) => {
     const erro = new Error('Não encontrado');
